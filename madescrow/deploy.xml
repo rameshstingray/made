@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="madescrow" default="deploy">
+  
+  <property name="madescrow.path" value="C:/xampp/htdocs/madescrow"/>
+	
+  <!-- The workspace directory -->
+  <property name="workspace.dir" value="${basedir}/.." />
+
+
+	<!-- What projects to build -->
+  <property name="web.app.project" value="madescrow"/> 
+
+
+	<target name="deploy">  
+		<!-- Build jars for projects -->
+		<antcall target="copy-web-app" />	
+		
+	</target>	 
+	
+	<target name="copy-web-app">
+	    
+		<echo>Copy ${workspace.dir}/${web.app.project}/WebContent to ${madescrow.path}</echo>
+		<copy toDir="${madescrow.path}">
+			<fileset dir="${workspace.dir}/${web.app.project}/"/>
+		</copy>
+		
+	</target>   
+	
+		
+</project>
