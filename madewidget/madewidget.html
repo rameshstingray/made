@@ -14,7 +14,7 @@
     <script type="text/javascript" src="web3.min.js"></script>
     <script type="text/javascript">
         "use strict";
-         alert("start");
+         
          eventHandlerPageLoad = function() {
             if (typeof web3 !== 'undefined') {
                 window.web3 = new Web3(web3.currentProvider);
@@ -24,9 +24,9 @@
         }
 
         function startApp(){
-            alert("sstartapp");
+            
             monitorAccountChanges();
-            alert("endmonitorapp")
+
         }
         window.addEventListener('load', eventHandlerPageLoad);
 
@@ -40,10 +40,10 @@
 
          function monitorAccountChanges() {
             var accountInterval;
-            alert("startmonitorapp")
+            
             if(web3.isConnected()){
                var account = web3.eth.accounts[0];
-          } else {
+          	} else {
                 document.getElementById('intervalErrorMessage').innerText = "No Ethereum node found";
             }
         }
